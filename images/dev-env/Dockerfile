@@ -35,7 +35,7 @@ RUN apt update && \
 RUN update-alternatives --set ebtables /usr/sbin/ebtables-legacy
 
 # The `TARGET_PLATFORM` would be `amd64` or `arm64`
-ARG TARGET_PLATFORM=amd64
+ARG TARGET_PLATFORM=s390x
 
 # The architecture part of the url is `aarch_64` or `x86_64`
 RUN case "$TARGET_PLATFORM" in \

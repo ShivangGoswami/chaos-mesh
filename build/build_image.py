@@ -65,7 +65,7 @@ def get_image_full_name(name):
     get the full tag of an image
     """
     tag = get_image_tag(name)
-    return f"ghcr.io/chaos-mesh/{name}:{tag}"
+    return f"quay.io/chaos-mesh/{name}:{tag}"
 
 
 def pass_env_to_build_arg(cmd, arg_name):
@@ -114,7 +114,7 @@ def main():
                 "docker",
                 "buildx",
                 "build",
-                "--load",
+                "--push",
                 "--cache-to",
                 f"type=local,dest={cache_dir}"]
             if os.getenv("DISABLE_CACHE_FROM") != "1":
@@ -126,7 +126,7 @@ def main():
                     "docker",
                     "buildx",
                     "build",
-                    "--load",
+                    "--push",
                     "--platform",
                     f"linux/{os.getenv('TARGET_PLATFORM')}"]
             else:

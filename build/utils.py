@@ -51,5 +51,8 @@ def get_target_platform():
 
     if machine == "aarch64":
         return Platform("arm64", False)
+     
+    if machine == "s390x":
+        return Platform("s390x", False)
 
     sys.exit("Please run this script on amd64 or arm64 machines.")

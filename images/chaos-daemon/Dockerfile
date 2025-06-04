@@ -8,7 +8,7 @@ ARG HTTP_PROXY
 ENV http_proxy $HTTP_PROXY
 ENV https_proxy $HTTPS_PROXY
 
-ARG TARGET_PLATFORM=amd64
+ARG TARGET_PLATFORM=s390x
 
 RUN mkdir -p /tmp/bin && \
     curl -L https://mirrors.chaos-mesh.org/byteman-chaos-mesh-download-v4.0.24-0.12.tar.gz -o /usr/local/byteman.tar.gz && \

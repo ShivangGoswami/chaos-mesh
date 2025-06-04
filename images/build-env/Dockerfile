@@ -11,12 +11,12 @@ ENV http_proxy $HTTP_PROXY
 ENV https_proxy $HTTPS_PROXY
 
 RUN apt update && \
-    apt install build-essential curl git pkg-config libfuse-dev fuse -y && \
+    apt install build-essential curl git pkg-config libfuse-dev fuse nodejs npm -y && \
     rm -rf /var/lib/apt/lists/*
 
-RUN curl -fsSL https://deb.nodesource.com/setup_18.x | bash - && \
-    apt install -y nodejs && \
-    rm -rf /var/lib/apt/lists/*
+# RUN curl -fsSL https://deb.nodesource.com/setup_18.x | bash - && \
+#     apt install -y nodejs && \
+#     rm -rf /var/lib/apt/lists/*
 RUN npm install pnpm@9 -g
 
 ARG TARGET_PLATFORM=s390x
